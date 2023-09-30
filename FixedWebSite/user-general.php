@@ -31,7 +31,7 @@
 	
 		<div class="left-nav">
 		<ul>
-		<li><a class="active" href="user-general.html">General</a></li>
+		<li><a class="active" href="user-general.php">General</a></li>
 		<li><a href="user-order.php">Orders</a></li>
 		<li><a href="user.messages.php">Messages</a></li>
 		</ul>

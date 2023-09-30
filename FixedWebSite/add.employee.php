@@ -24,17 +24,29 @@
 		<div class="left-nav">
 		<ul>
 		<li><a href="admin.customer.php">Customers</a></li>
-		<li><a  href="admin.employee.php">Employees</a></li>
+		<li><a href="admin.employee.php">Employees</a></li>
 		<li><a href="admin.product.php">Products</a></li>
-		<li><a href="admin.corders.php">Orders</a></li>
+		<li><a href="admin.orders.php">Orders</a></li>
 		<li><a href="additems.php">Add Products</a></li>
 		<li><a href="update.delete.php">Update/Delete Products</a></li>
         <li><a class="active" href="add.employee.php">Add Employees</a></li>
 		<li><a href="admin.messages.php">Messages</a></li>
 		<li><a href="user-general.php">General</a></li>
-			<li><a href="user-order.php">My Orders</a></li>
 		</ul>
 		</div>
+		
+		<?php
+		
+		//validating user access type
+
+		$account_type = $_SESSION['u_acc_type'];
+
+		if($account_type=="Customer"){
+			echo "<h1>Access Denied</h1>";
+		}else{
+
+		
+		?>
 		
 		<!--emloyee insering form-->
 		
@@ -58,7 +70,7 @@
 	<!--footer start-->
 	
 	<?php
-	
+		}
 		include_once 'footer.php';
 	?>
 	

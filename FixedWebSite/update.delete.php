@@ -30,9 +30,21 @@
 		<li><a href="add.employee.php">Add Employees</a></li>
 		<li><a href="admin.messages.php">Messages</a></li>
 		<li><a href="user-general.php">General</a></li>
-			<li><a href="user-order.php">My Orders</a></li>
 		</ul>
 		</div>
+
+		<?php
+		
+		//validating user access type
+
+		$account_type = $_SESSION['u_acc_type'];
+
+		if($account_type=="Customer"){
+			echo "<h1>Access Denied</h1>";
+		}else{
+
+		
+		?>
 		
 	<div class="o-container">
 	
@@ -59,7 +71,7 @@
 	<!--FOOTER START-->
 	
 	<?php
-	
+		}
 		include_once 'footer.php';
 	?>
 	

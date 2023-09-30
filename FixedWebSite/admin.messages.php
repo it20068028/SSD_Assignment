@@ -24,13 +24,12 @@
 		<li><a href="admin.customer.php">Customers</a></li>
 		<li><a  href="admin.employee.php">Employees</a></li>
 		<li><a href="admin.product.php">Products</a></li>
-		<li><a href="admin.corders.php">Orders</a></li>
+		<li><a href="admin.orders.php">Orders</a></li>
 		<li><a href="additems.php">Add Products</a></li>
 		<li><a href="update.delete.php">Update/Delete Products</a></li>
 		<li><a href="add.employee.php">Add Employees</a></li>
 		<li><a class="active" href="admin.messages.php">Messages</a></li>
-		<li><a href="user-general.php">General</a></li>
-		<li><a href="user-order.php">My Orders</a></li>
+		<li><a href="admin.general.php">General</a></li>
 		</ul>
 		</div>
 		

@@ -13,7 +13,6 @@ if (isset($_POST['signup'])) {
 	$password = mysqli_real_escape_string($conn, $_POST['psw']);
 	$rpassword = mysqli_real_escape_string($conn, $_POST['rpsw']);
 	
-	
 	if (empty($email) || empty($uname) || empty($first) || empty($last) || empty($address) ||
 	empty($contact) || empty($password) || empty($rpassword)) {
 		

@@ -45,9 +45,11 @@ if(isset($_POST['login'])) {
 					$_SESSION['u_last'] = $row['last_name'];
 					$_SESSION['u_email'] = $row['email'];
 					$_SESSION['u_name'] = $row['user_name'];
+					//fetching account type and set as a session variable
+					$_SESSION['u_acc_type'] = $row['actype'];
 					
 					
-					if($email == "admin" || $email == "admin@weddingplanner.lk"){
+					if($email == "admin" || $email == "admin@weddingplanner.lk" || $_SESSION['u_acc_type'] == "Admin"){
 						
 						$message = "Successfully login!";
 						echo "<script type='text/javascript'>alert('$message');

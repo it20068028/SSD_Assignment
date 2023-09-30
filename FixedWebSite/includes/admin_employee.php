@@ -2,6 +2,14 @@
 
 	include_once 'config.php';
 
+	//validating user access type
+
+	$account_type = $_SESSION['u_acc_type'];
+
+	if($account_type=="Customer"){
+		echo "<h1>Access Denied</h1>";
+	}else{
+
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +72,7 @@
 	
 }
  
- ?>
+}?>
 </table>
 
 </body>

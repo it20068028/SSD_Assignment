@@ -4,7 +4,7 @@
 		$name=$_POST['value_pass_name'];
 		$price=$_POST['value_pass_price'];
 		$quantity=$_POST['value_pass_quantity'];
-		$con=new mysqli('localhost','root','','pharmacy');
+		$con=new mysqli('localhost','root','rbr2373','pharmacy');
 		
 		if($con->connect_error)
 		{
@@ -16,7 +16,7 @@
 			//echo "connect success...!!";
 		}
 		
-		$sql= "INSERT into cart(name,price,product_quantity) values('$name',$price,$quantity)";
+		$sql= "INSERT INTO cart(name,price,product_quantity) VALUES('$name','$price','$quantity')";
 		
 		
 		if($con->query($sql))

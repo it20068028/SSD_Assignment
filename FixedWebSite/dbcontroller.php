@@ -2,7 +2,7 @@
 
 $dbServername = "localhost"; 
 $dbUsername = "root";
-$dbPassword = ""; 
+$dbPassword = "rbr2373"; 
 $dbName = "pharmacy"; 
 
 $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName); 
@@ -10,7 +10,7 @@ $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 class DBController {
 	private $host = "localhost";
 	private $user = "root";
-	private $password = "";
+	private $password = "rbr2373";
 	private $database = "pharmacy";
 	private $conn;
 	

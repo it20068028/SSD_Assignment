@@ -18,7 +18,7 @@ require("includes/dbcontroller.php");
 
 <?php
 if (isset($_GET['id'])){
-	$id = $_GET['id'];
+	$id = mysqli_real_escape_string($conn, $_GET['id']);
 }
 ?>
 
@@ -28,6 +28,7 @@ if (isset($_GET['id'])){
 	$sql = "SELECT * FROM product WHERE product_id='$id' LIMIT 1;";
 	$result = mysqli_query($conn, $sql); 
 	$resultCheck = mysqli_num_rows($result);
+	mysqli_multi_query($conn, $sql); 
 	
 //FETCHING DATA FROM TABLE - producttable
 	if ($resultCheck > 0){

@@ -2,6 +2,15 @@
 
 	include_once 'config.php';
 
+	//validating user access type
+
+	$account_type = $_SESSION['u_acc_type'];
+
+	if($account_type=="Customer"){
+		echo "<h1>Access Denied</h1>";
+	}else{
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,14 +39,15 @@
 		if($resultCheck > 0) {
 			while($row = mysqli_fetch_assoc($result)){
     ?>
-   <tr>
-    <td><?php echo $row['customer_id'];?></td> 
-    <td><?php echo $row['email'];?></td>
-    <td><?php echo $row['user_name'];?></td>
-	<td><?php echo $row['first_name'];?></td>
-	<td><?php echo $row['last_name'];?></td>
-	<td><?php echo $row['address'];?></td>
-	<td><?php echo $row['contact_no'];?></td>
+	<?php //this outputs has been validated for XSS ?>
+   <tr>    
+    <td><?php echo htmlspecialchars($row['customer_id'],ENT_QUOTES,'UTF-8');?></td> 
+    <td><?php echo htmlspecialchars($row['email'],ENT_QUOTES,'UTF-8');?></td> 
+    <td><?php echo htmlspecialchars($row['user_name'],ENT_QUOTES,'UTF-8');?></td>
+    <td><?php echo htmlspecialchars($row['first_name'],ENT_QUOTES,'UTF-8');?></td>
+    <td><?php echo htmlspecialchars($row['last_name'],ENT_QUOTES,'UTF-8');?></td>
+    <td><?php echo htmlspecialchars($row['address'],ENT_QUOTES,'UTF-8');?></td> 
+    <td><?php echo htmlspecialchars($row['contact_no'],ENT_QUOTES,'UTF-8');?></td>
 	<td><a  class="add x" href="includes/delete_customer.php?id=<?php echo $row['customer_id']; ?>">Delete</a></td>
   </tr>
   
@@ -62,7 +72,7 @@
 	
 }
  
- ?>
+}?>
 </table>
 
 </body>
