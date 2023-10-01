@@ -2,8 +2,20 @@
 	session_start();
 	include_once 'config.php';
 	
-	$n = $_SESSION['u_id'];
+	// validating csfr token
 
+	$token = $_SESSION['csrf_token'];
+	$form_token = $_POST['csrf_token'];
+
+	if(!$token==$form_token){
+		echo '<h1>Invalid CSRF Token</h1>';
+		header($_SERVER["SERVER_PROTOCOL"].'405 Method Not Allowed');
+
+		exit;
+	}
+
+	$n = $_SESSION['u_id'];
+	
 	if(isset($_POST['submit'])){
 		
 		

@@ -14,6 +14,10 @@
 	<?php
 		
 		include_once 'header.php';
+		//including csrf
+		include_once 'includes/csrf.php';
+	
+		
 	?>
 
 	<!--HEADER END-->

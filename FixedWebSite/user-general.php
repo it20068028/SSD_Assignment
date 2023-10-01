@@ -16,7 +16,6 @@
 		include_once 'header.php';
 		include_once 'includes/config.php';
 	
-	
 	$n = $_SESSION['u_id'];
 	$customerPwd = $_SESSION['u_pwd'];
 	
@@ -40,6 +39,7 @@
 	<div class="o-container">
 		
 			<form action="includes/user_general.php" method="POST">
+				<input type="hidden" value ="<?php echo $_SESSION['csrf_token']?>" name="csrf_token">
 				<div>
 				<label class="one">User Name</label>
 				<input type="text" name="uname" id="un" class="userid" value="<?php echo $row['user_name']; ?>">
